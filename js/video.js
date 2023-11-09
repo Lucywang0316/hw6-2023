@@ -66,10 +66,12 @@ let mute=document.querySelector('#mute')
 mute.addEventListener('click',function() { 
 	if (video.muted) {
 		video.muted = false;
+		muteButton.textContent = "Mute";
 		console.log("Unmuted");
 	}
 	else {
 		video.muted = true;
+		muteButton.textContent = "Unmute";
 		console.log("Muted");
 	}
 });
@@ -83,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var sliderValue = volumeSlider.value;
         video.volume = sliderValue / 100;
         volumeDisplay.innerHTML = sliderValue + '%';
-        console.log("Volume is " + sliderValue +'%');
+        console.log("Volume is " + sliderValue + '%');
     });
 });
 
