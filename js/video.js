@@ -21,6 +21,7 @@ let playButton=document.querySelector('#play')
 playButton.addEventListener('click',function(){
 	console.log("Play Video");
 	video.play(); 
+	//do i need to put volumn here?
 })
 
 //pause button
@@ -62,8 +63,9 @@ skipAhead.addEventListener("click",function() {
 	console.log("Current location is " + video.currentTime);
 } );
 //mute function
-let mute=document.querySelector('#mute')
-mute.addEventListener('click',function() { 
+
+let muteButton=document.querySelector('#mute')
+muteButton.addEventListener('click',function() { 
 	if (video.muted) {
 		video.muted = false;
 		muteButton.textContent = "Mute";
