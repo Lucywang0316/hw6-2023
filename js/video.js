@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var sliderValue = volumeSlider.value;
         video.volume = sliderValue / 100;
         volumeDisplay.innerHTML = sliderValue + '%';
-        console.log("Volume is " + sliderValue + '%');
+        console.log("The current value is " + video.volume);
     });
 });
 
