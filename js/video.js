@@ -1,26 +1,26 @@
-
 //opening 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
 
 });
+let volumeDisplay = document.querySelector('#volume');
 let video = document.querySelector("#player1"); 
-
 //load vid
 document.addEventListener("DOMContentLoaded", function() {
     video.autoplay = false; // Turn off autoplay
 	console.log("Auto Play is set to false")
-
     video.loop = false; // Turn off looping
 	console.log("loop is set to false")
 
 });
-
 //play button
 let playButton=document.querySelector('#play')
 playButton.addEventListener('click',function(){
 	console.log("Play Video");
+	volumeDisplay.innerHTML=video.volume * 100 +'%';
 	video.play(); 
+	
+	//console.log(video.volume)
 	//do i need to put volumn here?
 })
 
@@ -33,7 +33,6 @@ pauseButton.addEventListener('click',function(){
 
 //slow down
 let decreaseSpeed = document.querySelector('#slower');
-
 decreaseSpeed.addEventListener('click', function() {
     video.playbackRate = video.playbackRate * 0.9;
     console.log("Speed is " + video.playbackRate);
@@ -58,7 +57,7 @@ skipAhead.addEventListener("click",function() {
 		video.load();
 		video.play();
 		// reset speed
-		playbackRate = 1;
+		video.playbackRate = 1;
 	}
 	console.log("Current location is " + video.currentTime);
 } );
@@ -80,8 +79,6 @@ muteButton.addEventListener('click',function() {
 
 //volumn slider
 let volumeSlider = document.querySelector('#slider');
-let volumeDisplay = document.querySelector('#volume');
-
     volumeSlider.addEventListener('change', function() {
         let sliderValue = volumeSlider.value;
         video.volume = sliderValue / 100;
