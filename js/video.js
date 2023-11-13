@@ -4,7 +4,7 @@ window.addEventListener("load", function() {
 	console.log("Good job opening the window")
 
 });
-var video = document.querySelector("#player1"); 
+let video = document.querySelector("#player1"); 
 
 //load vid
 document.addEventListener("DOMContentLoaded", function() {
@@ -79,22 +79,20 @@ muteButton.addEventListener('click',function() {
 });
 
 //volumn slider
-document.addEventListener("DOMContentLoaded", function() {
-    var volumeSlider = document.querySelector('#slider');
-    var volumeDisplay = document.querySelector('#volume');
+let volumeSlider = document.querySelector('#slider');
+let volumeDisplay = document.querySelector('#volume');
 
-    volumeSlider.addEventListener('input', function() {
-        var sliderValue = volumeSlider.value;
+    volumeSlider.addEventListener('change', function() {
+        let sliderValue = volumeSlider.value;
         video.volume = sliderValue / 100;
         volumeDisplay.innerHTML = sliderValue + '%';
         console.log("The current value is " + video.volume);
     });
-});
+
 
 //styled vintage
-document.addEventListener("DOMContentLoaded", function() {
-var vintageButton = document.getElementById('vintage');
-var origButton = document.getElementById('orig');
+let vintageButton = document.getElementById('vintage');
+let origButton = document.getElementById('orig');
 vintageButton.addEventListener('click',function() { 
 	video.classList.add("oldSchool");
 	console.log("oldSchool");
@@ -104,9 +102,6 @@ origButton.addEventListener('click', function() {
 	video.classList.remove('oldSchool');
 	console.log("remove oldSchool");
   });
-});
 
-// document.querySelector("#play").addEventListener("click", function() {
-// 	console.log("Play Video");
-// });
+
 
